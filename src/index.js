@@ -8,6 +8,7 @@ import registerServiceWorker from './registerServiceWorker';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import logger from 'redux-logger';
+// import { isNull } from 'util';
 
 //reducer for feelingToday component
 const feelingToday = (state = 0, action) => {
@@ -40,13 +41,14 @@ const supportLevel = (state = 0, action) => {
 }
 
 //Reducer for the additional comments 
-// const addComments = (state = {}, action) => {
-//     if(action.type === 'COMMENTS'){
-//         console.log('In Comments', state);
-//         const comment = action.payload;
-//         return comment;
-//     }
-// }
+const addComments = (state = '', action) => {
+    if(action.type === 'COMMENTS'){
+        console.log('In Comments', state);
+        const comment = action.payload;
+        return comment;
+    }
+    return state;
+}
 
 //Create store
 const storeInstance = createStore(
@@ -54,7 +56,7 @@ const storeInstance = createStore(
         feelingToday,
         understandToday,
         supportLevel,
-        // addComments,  
+        addComments,  
     }),
     applyMiddleware(logger),
 );

@@ -18,7 +18,7 @@ class Support extends Component {
         // set the state 
         this.supportChange = (event) => {
                 this.setState({
-                    understanding: event.target.value
+                    support: event.target.value
                 })
         }
 
@@ -28,7 +28,7 @@ class Support extends Component {
                             payload:this.state,
             };
             this.props.dispatch(action);
-            console.log('Understanding Next Click', this.state);
+            console.log('support Next Click', this.state);
             this.props.history.push('/Comments');
         }
         
@@ -37,10 +37,10 @@ class Support extends Component {
     render() {
         return (
             <div>
-                    <h4>How well are you understanding the material?</h4>
-               <input type="number" placeholder="Understanding? 1-5" onChange={this.understandingChange} />
+                    <h4>Do you feel Supported?</h4>
+               <input type="number" placeholder="Do you fell Supported? 1-5" onChange={this.supportChange} />
 
-                <button onClick={this.setUnderstanding}>Next</button>
+                <button onClick={this.setSupport}>Next</button>
             </div>
         );
     }
