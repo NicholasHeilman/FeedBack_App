@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
-function mapStateToProps(state) {
+function mapReduxStoreToProps(state) {
     return {
 
     };
@@ -17,7 +17,7 @@ class Comments extends Component {
         // set the state 
         this.commentChange = (event) => {
                 this.setState({
-                    support: event.target.value
+                    comments: event.target.value
                 })
         }
 
@@ -28,7 +28,7 @@ class Comments extends Component {
             };
             this.props.dispatch(action);
             console.log('Comment Next Click', this.state);
-            // this.props.history.push('/YourFeedback');
+            this.props.history.push('/YourFeedback');
         }
         
     }
@@ -47,5 +47,5 @@ class Comments extends Component {
   
 
 export default connect(
-    mapStateToProps,
+    mapReduxStoreToProps,
 )(Comments);

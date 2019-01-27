@@ -36,6 +36,7 @@ const supportLevel = (state = 0, action) => {
        console.log('In SUPPORT', state);
         const addSupport = action.payload;
         return addSupport;
+       
     }
     return state;
 }
@@ -44,8 +45,8 @@ const supportLevel = (state = 0, action) => {
 const addComments = (state = '', action) => {
     if(action.type === 'COMMENTS'){
         console.log('In Comments', state);
-        const comment = action.payload;
-        return comment;
+        const comments = action.payload;
+        return comments;
     }
     return state;
 }

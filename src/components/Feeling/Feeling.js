@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 // import ReactDOM from 'react-dom';
 // import InputRange from 'react-input-range';
 
-function mapStateToProps(state) {
+function mapReduxStoreToProps(state) {
     return {
 
     };
@@ -65,4 +65,4 @@ class Feeling extends Component {
     }
 }
 // ReactDOM.render(<App />,document.getElementById('app')); 
-export default connect(mapStateToProps,)(Feeling);
+export default connect(mapReduxStoreToProps,)(Feeling);

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 
-function mapStateToProps(state) {
+function mapReduxStoreToProps(state) {
     return {
 
     };
@@ -46,4 +46,4 @@ class Support extends Component {
     }
 }
 // ReactDOM.render(<App />,document.getElementById('app')); 
-export default connect(mapStateToProps,)(Support);
+export default connect(mapReduxStoreToProps,)(Support);
