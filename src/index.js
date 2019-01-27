@@ -12,7 +12,7 @@ import logger from 'redux-logger';
 //reducer for feelingToday component
 const feelingToday = (state = 0, action) => {
    if(action.type === 'SET_FEELING'){
-        console.log('In FEELING', state);
+        // console.log('In FEELING', state);
         const addFeeling = action.payload;
         return addFeeling; 
     }
