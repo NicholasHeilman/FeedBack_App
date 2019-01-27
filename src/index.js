@@ -40,13 +40,13 @@ const supportLevel = (state = 0, action) => {
 }
 
 //Reducer for the additional comments 
-const addComments = (state = ' ', action) => {
-    if(action.type === 'COMMENTS'){
-        console.log('In Comments', state);
-        const comment = action.payload;
-        return comment;
-    }
-}
+// const addComments = (state = {}, action) => {
+//     if(action.type === 'COMMENTS'){
+//         console.log('In Comments', state);
+//         const comment = action.payload;
+//         return comment;
+//     }
+// }
 
 //Create store
 const storeInstance = createStore(
@@ -54,11 +54,9 @@ const storeInstance = createStore(
         feelingToday,
         understandToday,
         supportLevel,
-        addComments,
-        
+        // addComments,  
     }),
     applyMiddleware(logger),
 );
-
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();
