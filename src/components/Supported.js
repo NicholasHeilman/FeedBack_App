@@ -38,7 +38,7 @@ class Support extends Component {
         return (
             <div>
                     <h4>Do you feel Supported?</h4>
-               <input type="number" placeholder="Do you fell Supported? 1-5" onChange={this.supportChange} />
+               <input type="number" placeholder="Do you feel Supported? 1-5" onChange={this.supportChange} />
 
                 <button onClick={this.setSupport}>Next</button>
             </div>

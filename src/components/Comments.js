@@ -23,12 +23,12 @@ class Comments extends Component {
 
         //send the state to the Store
         this.setComment = () => {
-            const action = {type: 'SUPPORT_LEVEL',
+            const action = {type: 'COMMENTS',
                             payload:this.state,
             };
             this.props.dispatch(action);
             console.log('Comment Next Click', this.state);
-            this.props.history.push('/YourFeedback');
+            // this.props.history.push('/YourFeedback');
         }
         
     }
@@ -36,22 +36,15 @@ class Comments extends Component {
     render() {
         return (
             <div>
-                    <h4>Do you feel Supported?</h4>
-               <input type="number" placeholder="Do you fell Supported? 1-5" onChange={this.supportChange} />
+                    <h4>Additional Comments?</h4>
+               <input type="text" placeholder="Comments" onChange={this.commentChange} />
 
-                <button onClick={this.setSupport}>Next</button>
+                <button onClick={this.setComment}>Next</button>
             </div>
         );
     }
 }
-    render() {
-        return (
-            <div>
-                
-            </div>
-        );
-    }
-}
+  
 
 export default connect(
     mapStateToProps,
