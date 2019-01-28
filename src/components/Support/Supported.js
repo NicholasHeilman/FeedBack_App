@@ -22,6 +22,18 @@ class Support extends Component {
             support:  0,
         };
 
+         //disable the next button until a value is selected
+         this.disableBtn = () => {
+            if (this.state.support === 0) {
+                return <Button variant="contained" color="primary" disabled>Next</Button>
+            } else {
+                return <Button className="nextBtn"
+                                onClick={this.setSupport}    
+                                variant="contained" 
+                                color="primary">Next</Button>
+            }
+        }
+
         // set the state 
         this.supportChange = (event) => {
                 this.setState({
@@ -35,7 +47,6 @@ class Support extends Component {
                             payload:this.state,
             };
             this.props.dispatch(action);
-            console.log('support Next Click', this.state);
             this.props.history.push('/Comments');
         }
         
@@ -46,9 +57,9 @@ class Support extends Component {
             <div>
                 <Card className="card">
                     <Typography className="cardHeader">
-                        <h4>Do you feel Supported?</h4>
+                        Do you feel Supported?
                     </Typography>
-                    <Typography ClassName="cardBody">
+                    <Typography className="cardBody">
                         <CardContent>
                             <select onChange={this.supportChange} className="cardBody" placeholder="Do you feel Supported?" >
                                 <option></option>
@@ -61,10 +72,8 @@ class Support extends Component {
                         </CardContent>
                     </Typography>
                     <CardActions className="nextButton">
-                    <Button className="nextBtn"
-                        onClick={this.setSupport} variant="contained" color="primary">Next</Button>
+                        {this.disableBtn()}
                     </CardActions>
-
                 </Card>
                 <YourFeedback />
             </div>

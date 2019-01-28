@@ -21,6 +21,18 @@ class Understanding extends Component {
             understanding:  0,
         };
 
+         //disable the next button until a value is selected
+         this.disableBtn = () => {
+            if (this.state.understanding === 0) {
+                return <Button variant="contained" color="primary" disabled>Next</Button>
+            } else {
+                return <Button className="nextBtn"
+                                onClick={this.setUnderstanding}     
+                                variant="contained" 
+                                color="primary">Next</Button>
+            }
+        }
+
         // set the state 
         this.understandingChange = (event) => {
                 this.setState({
@@ -28,13 +40,12 @@ class Understanding extends Component {
                 })
         }
 
-        //send the state to the Store
+        //handle onClick and send the state to the Store 
         this.setUnderstanding = () => {
             const action = {type: 'UNDERSTAND_TODAY',
                             payload:this.state,
             };
             this.props.dispatch(action);
-            console.log('Understanding Next Click', this.state);
             this.props.history.push('/Supported');
         }
         
@@ -45,9 +56,9 @@ class Understanding extends Component {
             <div>
                <Card className="card">
                     <Typography className="cardHeader">
-                        <h4>How well are you understanding the material?</h4>
+                        How well are you understanding the material?
                     </Typography>
-                    <Typography ClassName="cardBody">
+                    <Typography className="cardBody">
                         <CardContent>
                             <select onChange={this.understandingChange}  className="cardBody" placeholder="Understanding?"  >
                                 <option></option>
@@ -60,8 +71,7 @@ class Understanding extends Component {
                         </CardContent>
                     </Typography>
                     <CardActions className="nextButton">
-                    <Button className="nextBtn"
-                        onClick={this.setUnderstanding} variant="contained" color="primary">Next</Button>
+                        {this.disableBtn()}
                     </CardActions>
                 </Card>
                 <YourFeedback />

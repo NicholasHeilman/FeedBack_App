@@ -1,7 +1,7 @@
 
 *** Description ***
 
-This is a FeedBack app that walks the user through the process 
+This is an interactive FeedBack app that walks the user through the process of leaving a review
 
 *** Built With ***
 
@@ -18,4 +18,6 @@ This is a FeedBack app that walks the user through the process
  - npm run server
  - npm run client
 
+*** Feeling ***
 
+First page starts with 
