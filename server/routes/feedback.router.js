@@ -4,15 +4,14 @@ const router = express.Router();
 
 
 //POST the user inputs
-router.post('/feedback', (req, res) => {
-    // console.log(req.body);
-
+router.post('/', (req, res) => {
+    console.log
     pool.query(`
         INSERT INTO "feedback" ("feeling", "understanding", "support", "comments") 
         VALUES ($1, $2, $3, $4);
     `, [req.body.feeling, req.body.understanding, req.body.support, req.body.comments])
+
     .then((result) => {
-        // console.log(result);
         res.sendStatus(201);
     }).catch((error) => {
         console.log('POST Error', error);

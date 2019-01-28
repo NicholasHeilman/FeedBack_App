@@ -47,7 +47,7 @@ class Comments extends Component {
                 understanding: this.props.reduxStore.understandToday.understanding,
                 support: this.props.reduxStore.supportLevel.support,
                 comments: this.props.reduxStore.addComments.comments
-            });  console.log(this.state);
+            });  console.log('Submit', this.state);
          axios ({
              method: 'POST',
              url: '/feedback',

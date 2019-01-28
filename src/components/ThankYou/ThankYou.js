@@ -19,7 +19,7 @@ class ThankYou extends Component {
                 <h3 className="header">Thank You for the Feedback!</h3>
 
                 {/* this button will not center for a reson I can't fugure out */}
-                <div className="sButton">
+                <div class="sButton">
                 <Button onClick={this.thankClick} className="thankYouBtn" variant="contained" color="primary">Start another Review</Button>
                 </div>
 
