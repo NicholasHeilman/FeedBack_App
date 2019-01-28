@@ -28,7 +28,7 @@ class Comments extends Component {
     
     
                 //disable the next button until a value is selected
-        disableBtn = () => {
+        this.disableBtn = () => {
             if (this.props.reduxStore.addComments.comments === '') {
                 return <Button variant="contained" color="primary" disabled>Submit Review</Button>
             } else {
