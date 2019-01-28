@@ -32,7 +32,7 @@ class Comments extends Component {
             if (this.props.reduxStore.addComments.comments === '') {
                 return <Button variant="contained" color="primary" disabled>Submit Review</Button>
             } else {
-                return <Button className="nextBtn"
+                return <Button className="submitButton"
                                     onClick={this.submitClick}    
                                     variant="contained" 
                                     color="primary">Submit Review</Button>
@@ -41,13 +41,13 @@ class Comments extends Component {
         
         } 
 
-        submitClick = () =>{
+        submitClick = () => {
             this.setState({
                 feeling: this.props.reduxStore.feelingToday.feeling,
                 understanding: this.props.reduxStore.understandToday.understanding,
                 support: this.props.reduxStore.supportLevel.support,
                 comments: this.props.reduxStore.addComments.comments
-            });  
+            });  console.log(this.state);
          axios ({
              method: 'POST',
              url: '/feedback',
@@ -81,8 +81,7 @@ class Comments extends Component {
                     </Typography>
                 </CardContent>
                 <CardActions className="submitButton">
-                {this.disableBtn()}
-                    {/* <Button onClick={this.submitClick} className="submitBtn" variant="contained" color="primary">Submit Review</Button> */}
+                        {this.disableBtn()}
                 </CardActions>
             </Card>
         </div>
