@@ -1,0 +1,19 @@
+.card{
+    padding: 10px;
+    margin: 5px;
+}
+
+
+.cardHeader{
+    text-align: center;
+
+}
+
+.cardBody{
+    text-align: center;
+    justify-content: center;
+}
+
+.nextButton{
+    justify-content: center;
+}

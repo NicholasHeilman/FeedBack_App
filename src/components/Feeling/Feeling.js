@@ -1,7 +1,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Button from '@material-ui/core/Button';
+import YourFeedback from '../Feedback/YourFeedback.js';
 // import ReactDOM from 'react-dom';
 // import InputRange from 'react-input-range';
+import Card from '@material-ui/core/Card';
+// import { withStyles } from '@material-ui/core/styles';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+import Typography from '@material-ui/core/Typography';
+import './Feeling.css';
+
+import 'react-input-range/lib/css/index.css'
 
 function mapReduxStoreToProps(state) {
     return {
@@ -51,18 +61,46 @@ class Feeling extends Component {
     }
     render() {
         return (
+           
+            // attempted to use a slider bar to select the number  
+            //      <div id="app">
+            //      <form className="form">
+        
+            //         </div>
+            //    {/* <InputRange maxValue={5} 
+            //                 minValue={0}
+            //                 value={this.state.value}
+            //     onChange={value => this.setState({ value })} />  */} 
+                    
+            //     <input type="number" placeholder="How are you Feeling? 1-5" onChange={this.feelingChange} /> 
             <div>
-                {/* <InputRange maxValue={5} 
-                            minValue={0}
-                            value={this.state.value}
-                onChange={value => this.setState({ value })}  */}
-                    <h4>How are you Felling Today? Between 1-5</h4>
-               <input type="number" placeholder="How are you Feeling? 1-5" onChange={this.feelingChange} />
+                <Card className="card">
+                <Typography className="cardHeader">
+                    How are you Felling Today? 
+                </Typography>
+                <Typography ClassName="cardBody">
+                    <CardContent>
+                        <select onChange={this.feelingChange} className="cardBody">
+                            <option></option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </CardContent>
+                </Typography>
+                <CardActions className="nextButton">
+                <Button className="nextBtn"
+                    onClick={this.setFeeling} variant="contained" color="primary">Next</Button>
+                </CardActions>
 
-                <button onClick={this.setFeeling}>Next</button>
-            </div>
+                </Card>
+             
+                <YourFeedback />
+                </div>
         );
     }
 }
-// ReactDOM.render(<App />,document.getElementById('app')); 
+// ReactDOM.render(<Feeling />,document.getElementById('app')); 
 export default connect(mapReduxStoreToProps,)(Feeling);
