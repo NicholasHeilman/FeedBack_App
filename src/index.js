@@ -52,7 +52,7 @@ const addComments = (state = '', action) => {
 }
 
 //Create store
-const storeInstance = createStore(
+const store = createStore(
     combineReducers({
         feelingToday,
         understandToday,
@@ -61,5 +61,5 @@ const storeInstance = createStore(
     }),
     applyMiddleware(logger),
 );
-ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, document.getElementById('root'));
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
 registerServiceWorker();

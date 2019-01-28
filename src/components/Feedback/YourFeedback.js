@@ -9,13 +9,6 @@ import Typography from '@material-ui/core/Typography';
 import './Feedback.css';
 
 
-
-// function mapReduxStoreToProps(state) {
-//     return {
-
-//     };
-// }
-
 class Comments extends Component {
     constructor(props){
         super(props);
@@ -26,7 +19,6 @@ class Comments extends Component {
             comments: '',
         };
     
-    
                 //disable the next button until a value is selected
         this.disableBtn = () => {
             if (this.props.reduxStore.addComments.comments === '') {
@@ -36,9 +28,8 @@ class Comments extends Component {
                                     onClick={this.submitClick}    
                                     variant="contained" 
                                     color="primary">Submit Review</Button>
-                }
-            }    
-        
+                    }
+                }       
         } 
 
         submitClick = () => {
@@ -65,6 +56,7 @@ class Comments extends Component {
     render() {
         return (
             <div>
+                {/* {JSON.stringify.this.state} */}
             <Card className="reviewCard">
                 <Typography className="reviewHeader">
                     Reivew Your Feedback
@@ -93,6 +85,4 @@ const mapReduxStoreToProps = (reduxStore) => ({
     reduxStore: reduxStore
 })
 
-export default connect(
-    mapReduxStoreToProps,
-)(Comments);
+export default connect(mapReduxStoreToProps)(Comments);
