@@ -10,6 +10,7 @@ This is an interactive FeedBack app that walks the user through the process of l
  - webpack
  - Axios
  - Material UI
+ - postgreSQL
 
 *** SETUP  ***
 
@@ -17,6 +18,7 @@ This is an interactive FeedBack app that walks the user through the process of l
  - npm install
  - npm run server
  - npm run client
+ - Database *** "prime_feedback" ***
 
 *** Feeling ***
 

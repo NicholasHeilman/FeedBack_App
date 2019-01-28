@@ -25,23 +25,6 @@ class Feeling extends Component {
         this.state = {
             feeling:  0,
         };
-            //attempt at setting a range for the input with a slider bar
-        // this.handleFeelingChange = (input) => {
-        //         if (input.value < 0) {
-        //             input.target.value = 0;
-        //             return input.target.value 
-        //         }
-        //         else if (input.value > 5) {
-        //              input.target.value = 5;
-        //              return input.target.value;
-        //         } else {
-        //         this.setState ({
-        //             feeling: input.target.value
-        //             })
-                   
-        //         }
-        //         console.log(input.target.value);
-        //     }
 
         //disable the next button until a value is selected
         this.disableBtn = () => {
@@ -50,14 +33,14 @@ class Feeling extends Component {
             } else {
                 return <Button className="nextBtn"
                 onClick={this.setFeeling} variant="contained" color="primary">Next</Button>
-            }
+            };
         }
         
         //handle the state state change from the input
         this.feelingChange = (event) => {
                 this.setState({
                     feeling: event.target.value
-                })
+                });
         }
 
         //handle the onClick and move user to next page
@@ -73,18 +56,6 @@ class Feeling extends Component {
     render() {
         return (
            
-            // attempted to use a slider bar to select the number almost working
-
-            //      <div id="app">
-            //      <form className="form">
-        
-            //         </div>
-            //    {/* <InputRange maxValue={5} 
-            //                 minValue={0}
-            //                 value={this.state.value}
-            //     onChange={value => this.setState({ value })} />  */} 
-                    
-            //     <input type="number" placeholder="How are you Feeling? 1-5" onChange={this.feelingChange} /> 
             <div>
                 <Card className="card">
                     <Typography className="cardHeader">
