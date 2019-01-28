@@ -41,16 +41,13 @@ class Comments extends Component {
         
         } 
 
-        sendToDb = () => {
+        submitClick = () =>{
             this.setState({
                 feeling: this.props.reduxStore.feelingToday.feeling,
                 understanding: this.props.reduxStore.understandToday.understanding,
                 support: this.props.reduxStore.supportLevel.support,
                 comments: this.props.reduxStore.addComments.comments
-            });    
-        } 
-
-     submitClick(){
+            });  
          axios ({
              method: 'POST',
              url: '/feedback',
