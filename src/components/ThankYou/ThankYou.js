@@ -3,11 +3,29 @@ import Button from '@material-ui/core/Button';
 import Header from '../Header/Header.js';
 import './ThankYou.css';
 
+function mapReduxStoreToProps(state) {
+    return {
+    };
+}
 
 
 class ThankYou extends Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            feeling: 0,
+            understanding: 0,
+            support: 0,
+            comments: '',
+        };
 
     thankClick = () => {
+        this.setState({
+            feeling: 0,
+            understanding: 0,
+            support: 0,
+            comments: '',
+        })
         this.props.history.push('/');
     }
 
@@ -28,4 +46,4 @@ class ThankYou extends Component {
     }
 }
 
-export default ThankYou;
+export default connect(mapReduxStoreToProps,)(ThankYou);
