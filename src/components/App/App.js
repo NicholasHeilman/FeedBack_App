@@ -20,7 +20,7 @@ class App extends Component {
          <Header />
           <div>
             <Router>
-            <div>
+            <div className="cardDisplay">
             <Route exact path="/" component={Feeling} />
             <Route exact path="/Understanding" component={Understanding} /> 
             <Route exact path="/Supported" component={Supported} />

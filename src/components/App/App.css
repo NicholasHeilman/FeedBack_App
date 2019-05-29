@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+
 }
 
 .App-header {
@@ -15,5 +16,10 @@
 
 .App-intro {
   font-size: large;
+}
+
+.cardDisplay{
+  display: flex;
+  justify-content: center;
 }
 
