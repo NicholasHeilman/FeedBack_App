@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
-import Header from '../Header/Header.js';
+import Card from '@material-ui/core/Card';
+import CardActions from '@material-ui/core/CardActions';
+import CardContent from '@material-ui/core/CardContent';
+// import Typography from '@material-ui/core/Typography';
 import './ThankYou.css';
 
 function mapReduxStoreToProps(state) {
@@ -36,14 +39,14 @@ class ThankYou extends Component {
     render() {
         return (
             <div className="container">
-              
-                <h3 className="header">Thank You for the Feedback!</h3>
-
-                {/* this button will not center for a reson I can't fugure out */}
-                <div class="sButton">
-                <Button onClick={this.thankClick} className="thankYouBtn" variant="contained" color="primary">Start another Review</Button>
-                </div>
-
+                <Card className="card">
+                    <CardContent>
+                        <h3 className="header">Thank You for the Feedback!</h3>
+                    </CardContent>
+                    <CardActions className="sButton">
+                        <Button onClick={this.thankClick} className="thankYouBtn" variant="contained" color="primary">Start another Review</Button>
+                    </CardActions>
+                </Card>
             </div>
         );
     }

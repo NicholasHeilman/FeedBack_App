@@ -26,7 +26,7 @@ class Comments extends Component {
            //disable the next button until a value is selected
            this.disableBtn = () => {
             if (this.state.comments === '') {
-                return <Button variant="contained" color="primary" disabled>Next</Button>
+                return <Button variant="contained" color="primary" disabled>Incomplete</Button>
             } else {
                 return <Button className="nextBtn"
                                 onClick={this.setComment}     

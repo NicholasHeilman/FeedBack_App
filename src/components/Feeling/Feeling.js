@@ -2,15 +2,11 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import YourFeedback from '../Feedback/YourFeedback.js';
-// import ReactDOM from 'react-dom';
-// import InputRange from 'react-input-range';
 import Card from '@material-ui/core/Card';
-// import { withStyles } from '@material-ui/core/styles';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import './Feeling.css';
-
 import 'react-input-range/lib/css/index.css'
 
 function mapReduxStoreToProps(state) {
@@ -29,11 +25,11 @@ class Feeling extends Component {
         //disable the next button until a value is selected
         this.disableBtn = () => {
             if (this.state.feeling === 0) {
-                return <Button variant="contained" color="primary" disabled>Next</Button>
+                return <Button variant="contained" color="primary" disabled>Incomplete</Button>
             } else {
                 return <Button className="nextBtn"
                 onClick={this.setFeeling} variant="contained" color="primary">Next</Button>
-            };
+            }
         }
         
         //handle the state state change from the input
