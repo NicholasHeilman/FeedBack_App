@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import Button from '@material-ui/core/Button';
 import Header from '../Header/Header.js';
 import './ThankYou.css';
@@ -18,6 +19,7 @@ class ThankYou extends Component {
             support: 0,
             comments: '',
         };
+    }
 
     thankClick = () => {
         this.setState({
@@ -28,6 +30,7 @@ class ThankYou extends Component {
         })
         this.props.history.push('/');
     }
+
 
 
     render() {
