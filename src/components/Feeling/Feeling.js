@@ -74,7 +74,7 @@ class Feeling extends Component {
                     </CardActions>
                 </Card>
                 <YourFeedback />
-                </div>
+            </div>
         );
     }
 }
